@@ -1,0 +1,123 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh; 
+    background: hotpink; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    animation-name: bodyChange; 
+    animation-duration: 5s; 
+    animation-delay: 0; 
+    animation-timing-function: ease-in-out; /* research cubic bezier */
+    animation-iteration-count: infinite; 
+    animation-fill-mode: forwards; 
+}
+
+.box {
+    width: 1000px; 
+    height: 200px;
+    background-color: lightsteelblue; 
+    animation-name: change; 
+    animation-duration: 5s; 
+    animation-delay: 0; 
+    animation-timing-function: ease-in-out; /* research cubic bezier */
+    animation-iteration-count: infinite; 
+    animation-fill-mode: forwards; 
+
+    /* can also do this  */
+    /* animation: change 5s ease-in-out 0sinfinite forwards;  */
+}
+
+/* @media (max-width: 1100px) {
+    body {
+        background: red; 
+    }
+    .box {
+        width: 900px; 
+        background-color: seagreen; 
+    }
+} */
+
+.box {
+    width: 500px; 
+    height: 200px; 
+    background-color: firebrick; 
+    /* transition: background-color 1s linear;  */
+}
+
+.box:hover {
+    background-color: blue; 
+    height: 600px; 
+    transform: rotateY(25deg); 
+}
+
+/* Anything with a quantifiable value can be transitioned */
+
+/* 991 is ipad */
+@media (max-width: 1099px) and (min-width: 991px) {
+    .box {
+        width: 900px; 
+        background-color: seagreen; 
+    }
+}
+
+@media (max-width: 990px) and (min-width: 800px) {
+    body {
+        background-color: black; 
+    }
+    .box {
+        width: 400px; 
+        background-color: hotpink; 
+        border-radius: 10px; 
+    }
+}
+
+@media (max-width: 799px) and (min-width: 400px) {
+    body {
+        background-color: black; 
+    }
+    .box {
+        width: 100px; 
+        height: 100px;
+        background-color: aqua; 
+        border-radius: 50px; 
+    }
+}
+
+/* keyframes */
+
+/* using "top" is hard on the browser, so use "transform: translate" */
+
+@keyframes change {
+    0% {
+        width: 1000px; 
+        background-color: lightsteelblue; 
+        transform: translate(0, 200px); 
+        border-radius: 10px; 
+    }
+    50% {
+        background-color: aquamarine; 
+        border-radius: 20px; 
+    }
+    100% {
+        width: 500px; 
+        background-color: ghostwhite; 
+        transform: translate(0, 0px); 
+        border-radius: 30px; 
+    }
+}
+
+@keyframes bodyChange {
+    0% {
+        background-color: black; 
+    }
+    50% {
+        background-color: darkblue; 
+    }
+    100% {
+        background-color: blue; 
+    }
+}
+
+
+/* media queries */
